@@ -1,0 +1,23 @@
+# Dirs
+work
+libs
+impl
+  
+# Files
+*.mti
+*.wlf
+wlf*
+*_stacktrace.vstf
+*.mpf
+transcript
+Active-HDL
+
+ 
+# Active-HDL
+compile
+log
+*.asdbw
+*.wsp
+Edfmap.ini
+projlib.cfg
+stimulators.set
