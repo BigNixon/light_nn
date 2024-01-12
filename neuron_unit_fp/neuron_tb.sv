@@ -31,6 +31,15 @@ module neuron_unit_tb;
   always begin
     #5 clk = ~clk;
   end
+  integer mem00i, mem01i, mem02i, mem03i, mem04i, mem05i, mem06i;
+  integer mem10i, mem11i, mem12i, mem13i, mem14i, mem15i, mem16i;
+  integer mem20i, mem21i, mem22i, mem23i, mem24i, mem25i, mem26i;
+  integer mem30i, mem31i, mem32i, mem33i, mem34i, mem35i, mem36i;
+  integer mem40i, mem41i, mem42i, mem43i, mem44i, mem45i, mem46i;
+  integer mem50i, mem51i, mem52i, mem53i, mem54i, mem55i, mem56i;
+  integer mem60i, mem61i, mem62i, mem63i, mem64i, mem65i, mem66i;
+
+  integer mem00r, mem01r, mem02r, mem03r, mem04r, mem05r, mem06r;
 
   // Test sequence
   initial begin
@@ -58,13 +67,23 @@ module neuron_unit_tb;
     de_in = 1;
     // Assign memory to each line_i_in
     #10
-    line_0_in = memory[0];
-    line_1_in = memory[1];
-    line_2_in = memory[2];
-    line_3_in = memory[3];
-    line_4_in = memory[4];
-    line_5_in = memory[5];
-    line_6_in = memory[6];
+    mem00i = memory[0][55:48];
+    mem01i = memory[0][47:40];
+    mem02i = memory[0][39:32];
+    mem03i = memory[0][31:24];
+    mem04i = memory[0][23:16];
+    mem05i = memory[0][15:8];
+    mem06i = memory[0][7:0];
+
+    mem00r = $bitstoshortreal(mem00i);
+    mem01r = $bitstoshortreal(mem01i);
+    mem02r = $bitstoshortreal(mem02i);
+    mem03r = $bitstoshortreal(mem03i);
+    mem04r = $bitstoshortreal(mem04i);
+    mem05r = $bitstoshortreal(mem05i);
+    mem06r = $bitstoshortreal(mem06i);
+
+    line_0_in = {mem00r, mem01r, mem02r, mem03r, mem04r, mem05r, mem06r};
     #1000;
     
     $finish;

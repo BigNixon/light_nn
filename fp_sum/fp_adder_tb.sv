@@ -46,6 +46,15 @@ module fp_adder_tb;
         b = 32'hC2600000; // -19.0 in IEEE754
         #10;
 
+        a= 32'h44800333; // -100.0 in IEEE754
+        b= 32'hC2C80000; // 1024.0 in IEEE754
+        #10;
+        a= 32'hC2C80000; // -100.0 in IEEE754
+        b= 32'h40C00000; // 6.0 in IEEE754
+        #10;
+        a= 32'hC2C80000; // -100.0 in IEEE754
+        b = 32'h40490FDB; // 16.0 in IEEE754
+        #10;
         // Finish the simulation
         $finish;
     end

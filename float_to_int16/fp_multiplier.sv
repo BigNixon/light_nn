@@ -1,8 +1,7 @@
 module floating_point_multiplier(
     input wire [31:0] b,
-    output reg [31:0] p,
-    input wire [31:0] a,
-    input wire clk
+    output wire [31:0] p,
+    input wire [31:0] a
 );
 
     wire sign,product_round,normalised;
@@ -30,9 +29,7 @@ module floating_point_multiplier(
     //Final Manitssa.
     assign product_mantissa = product_normalised[46:24] + (product_normalised[23] & product_round); 
 
-    always @(posedge clk) begin
-        p <= {sign,exponent[7:0],product_mantissa};
-    end
-     
+
+    assign p = {sign,exponent[7:0],product_mantissa};
 
 endmodule
