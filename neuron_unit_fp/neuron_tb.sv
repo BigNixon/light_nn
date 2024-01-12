@@ -5,9 +5,9 @@ module neuron_unit_tb;
   reg clk;
   reg reset;
   reg de_in;
-  reg [55:0] line_0_in, line_1_in, line_2_in, line_3_in, line_4_in, line_5_in, line_6_in;
+  reg [223:0] line_0_in, line_1_in, line_2_in, line_3_in, line_4_in, line_5_in, line_6_in;
   reg [55:0] memory [0:6];
-  integer symbol_0, symbol_1, symbol_2, symbol_3;
+  reg[31:0] symbol_0, symbol_1, symbol_2, symbol_3;
 
   // Instantiate the neuron_unit module
   neuron_unit u_neuron_unit (
@@ -39,7 +39,7 @@ module neuron_unit_tb;
   integer mem50i, mem51i, mem52i, mem53i, mem54i, mem55i, mem56i;
   integer mem60i, mem61i, mem62i, mem63i, mem64i, mem65i, mem66i;
 
-  integer mem00r, mem01r, mem02r, mem03r, mem04r, mem05r, mem06r;
+  reg[31:0] mem00r, mem01r, mem02r, mem03r, mem04r, mem05r, mem06r;
 
   // Test sequence
   initial begin
