@@ -9,9 +9,9 @@ module neuron_input37 #(
     output reg [31:0] output_out
 );
 
-    logic [15:0] sumAdress;
+    reg [15:0] sumAdress;
     logic [31:0] afterActivation;
-    integer sumForActivation = 0;
+    reg[31:0] sumForActivation;
 
     reg [31:0] accumulate [36:0];
 

@@ -6,13 +6,13 @@ module neuron_input49 #(
 												42, 43, 44, 45, 46, 47, 48, 49, 50} //49 weigth + 1 bias
 ) (
     input logic clk,
-    input integer input_in [48:0],
+    input reg [31:0]  input_in [48:0],
     output reg [31:0] output_out
 );
 
     logic [15:0] sumAdress;
     logic [31:0] afterActivation;
-    integer sumForActivation = 0;
+    reg[31:0] sumForActivation;
 
     reg [31:0] accumulate [48:0];
 
@@ -126,7 +126,7 @@ module neuron_input49 #(
     );
 
     always_ff @( posedge clk ) begin : activation
-        sumAdress <= sumForActivation;
+        sumAdress <= sumForActivation_address;
     end
 
     //FOR MODELSIM SIMULATION & QUARTUS SYNTHESIS

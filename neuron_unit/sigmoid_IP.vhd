@@ -88,7 +88,7 @@ BEGIN
 		--init_file => "sigmoid_9_bit.mif",  -- 9 Bit
 		--init_file => "sigmoid_10_bit.mif", --10 Bit
 		--init_file => "sigmoid_11_bit.mif", --11 Bit
-		init_file => "sigmoid_12_bit.mif", --12 Bit
+		init_file => "./sigmoid_12_bit.mif", --12 Bit
 --
 		intended_device_family => "Cyclone IV E",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
