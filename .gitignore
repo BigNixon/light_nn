@@ -11,7 +11,9 @@ wlf*
 *.mpf
 transcript
 Active-HDL
-
+*.vcd
+*/*.vcd
+*/*/*.vcd
  
 # Active-HDL
 compile
@@ -21,3 +23,4 @@ log
 Edfmap.ini
 projlib.cfg
 stimulators.set
+*.vdc
